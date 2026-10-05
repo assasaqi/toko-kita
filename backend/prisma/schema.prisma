@@ -1,0 +1,34 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Product {
+  id         Int         @id @default(autoincrement())
+  nama       String
+  harga      Int
+  stok       Int
+  orderItems OrderItem[]
+}
+
+model Order {
+  id          Int         @id @default(autoincrement())
+  totalHarga  Int
+  statusBayar String      @default("pending")
+  statusKirim String      @default("pending")
+  createdAt   DateTime    @default(now())
+  orderItems  OrderItem[]
+}
+
+model OrderItem {
+  id        Int     @id @default(autoincrement())
+  orderId   Int
+  productId Int
+  jumlah    Int
+  hargaItem Int
+  order     Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product   Product @relation(fields: [productId], references: [id])
+}
