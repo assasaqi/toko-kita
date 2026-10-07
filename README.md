@@ -11,29 +11,6 @@ Frontend
 •	Framework / Build Tool: React.js dengan Vite
 •	Styling: Tailwind CSS
 •	HTTP Client: Axios
-📁 Struktur Repositori
-toko-kita/
-├── backend/                  # REST API Service
-│   ├── prisma/               # Skema & migrasi database Prisma
-│   │   ├── schema.prisma
-│   │   └── migrations/
-│   ├── src/
-│   │   ├── config/           # Konfigurasi Prisma Client
-│   │   ├── controllers/      # Logika aplikasi (Auth, Product, Order)
-│   │   ├── middleware/       # Autentikasi & Otorisasi JWT
-│   │   ├── routes/           # Endpoint API Express
-│   │   └── server.js         # Entry point backend
-│   └── package.json
-│
-└── frontend/                 # Client Interface (SPA)
-    ├── src/
-    │   ├── api/              # Axios instance Client API
-    │   ├── components/       # Komponen UI (Navbar, CartDrawer, InvoiceModal, dsb.)
-    │   ├── pages/            # Halaman (LoginPage, CustomerPage, AdminPage)
-    │   ├── App.jsx           # Routing & komponen utama
-    │   └── main.jsx          # Entry point frontend
-    ├── index.html
-    └── package.json
 
 ⚙️ Fitur Utama
 •	Autentikasi & Hak Akses (Auth): Registrasi, Login, serta pembagian peran pengguna (Role: CUSTOMER dan ADMIN).
